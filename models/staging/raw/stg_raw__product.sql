@@ -1,19 +1,3 @@
-with 
+select products_id, purchse_price ||"100"  as purchase_usd from {{ source('raw', 'product') }}
 
-source as (
-
-    select * from {{ source('raw', 'product') }}
-
-),
-
-renamed as (
-
-    select
-        products_id,
-        purchse_price
-
-    from source
-
-)
-
-select * from renamed
+ 
